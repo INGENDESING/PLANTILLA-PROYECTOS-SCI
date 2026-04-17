@@ -1,0 +1,93 @@
+\section{Bases de Diseño PCI}
+
+Las bases de diseño del sistema de protección contra incendios se fundamentan en la ocupación del proyecto, la clasificación del riesgo y las normas NFPA y NEC vigentes, registradas en el archivo \texttt{config/datos\_proyecto.tex}.
+
+\subsection{Identificación del proyecto}
+
+\begin{table}[htbp]
+\centering
+\caption{Identificación PCI}
+\label{tab:pci_id}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+\textbf{Parámetro} & \textbf{Valor} \\
+\midrule
+Ocupación / proceso & \occupancy \\
+Clase de riesgo NFPA 13 & \hazardclass \\
+Autoridad Competente (AHJ) & \ahj \\
+Áreas clasificadas (NEC Art.\ 500) & \classifiedareas \\
+Normas aplicables & \nfpacodes \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Condiciones ambientales del sitio}
+
+\begin{table}[htbp]
+\centering
+\caption{Condiciones ambientales del sitio de instalación}
+\label{tab:environmental_conditions}
+\setcounter{itemcount}{0}
+\begin{tabularx}{\textwidth}{@{}NXclc@{}}
+\toprule
+\multicolumn{1}{c}{\textbf{Item}} & \textbf{Parámetro Ambiental} & \textbf{Valor} & \textbf{Unidad} & \textbf{Referencia} \\
+\midrule
+& Temperatura ambiente máxima & 38{,}0 & °C & IDEAM \\
+& Temperatura ambiente mínima & 15{,}0 & °C & IDEAM \\
+& Humedad relativa máxima & 85{,}0 & \% & IDEAM \\
+& Presión atmosférica & 101{,}3 & kPa & NOAA \\
+& Altitud s.n.m. & 960 & msnm & IGAC \\
+& Velocidad máxima del viento & 120{,}0 & km/h & Estación local \\
+& Zona sísmica & -- & Intermedia & NSR-10 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Bases hidráulicas (NFPA 13 / 14 / 20)}
+
+\begin{table}[htbp]
+\centering
+\caption{Parámetros hidráulicos de diseño}
+\label{tab:hidraulica_bases}
+\setcounter{itemcount}{0}
+\begin{tabularx}{\textwidth}{@{}NXlc@{}}
+\toprule
+\multicolumn{1}{c}{\textbf{Item}} & \textbf{Parámetro} & \textbf{Valor} & \textbf{Referencia} \\
+\midrule
+& Densidad de diseño & \densidadDiseno & NFPA 13 §19.2.3 \\
+& Área de operación más remota & \areaOperacion & NFPA 13 §19.2 \\
+& Tiempo mínimo de operación & \tiempoOperacion & NFPA 13 Tabla 19.2.3 \\
+& Margen de seguridad hidráulico & \margenSeguridadHidro & Buenas prácticas \\
+& Coeficiente Hazen-Williams (acero) & 120 & NFPA 13 Tabla 23.4.4.7.1 \\
+& Bomba contra incendio & Según NFPA 20 & NFPA 20 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Detección y alarma (NFPA 72)}
+
+\begin{itemize}
+\item Tipos de detectores seleccionados por área (calor, humo, llama UV/IR) según clase de riesgo y tipo de combustible presente.
+\item Batería de respaldo dimensionada para 24 h en standby más 5 min en alarma (NFPA 72 §10.6.10), con factor de envejecimiento 1{,}20.
+\item Caída de tensión en NAC/SLC verificada al dispositivo más alejado (NFPA 72 §10.6.8.2).
+\item Nivel sonoro mínimo 15 dB por encima del ruido ambiente promedio (NFPA 72 §18.4).
+\end{itemize}
+
+\subsection{Extinción con agentes limpios (NFPA 2001, si aplica)}
+
+\begin{table}[htbp]
+\centering
+\caption{Bases agente limpio}
+\label{tab:agente_bases}
+\begin{tabularx}{\textwidth}{@{}lX@{}}
+\toprule
+\textbf{Parámetro} & \textbf{Valor} \\
+\midrule
+Agente & \agenteLimpio \\
+Concentración de diseño & \concentracionDiseno \\
+Factor de seguridad & 1{,}20 (Clase B) / 1{,}30 (Clase A) \\
+Tiempo de descarga & ≤ 10 s (halocarbonados) / ≤ 60 s (inertes) \\
+Hold time & ≥ 10 min a altura de protección \\
+\bottomrule
+\end{tabularx}
+\end{table}

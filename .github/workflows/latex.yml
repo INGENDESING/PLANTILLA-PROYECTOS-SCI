@@ -1,0 +1,42 @@
+name: Compile LaTeX PDF
+
+on:
+  push:
+    branches: ["**"]
+    paths:
+      - "plantillalatex/**"
+      - ".github/workflows/latex.yml"
+  pull_request:
+    paths:
+      - "plantillalatex/**"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Locate main .tex file
+        id: find_tex
+        run: |
+          main=$(ls plantillalatex/P*.tex | head -n 1)
+          echo "main=$main" >> "$GITHUB_OUTPUT"
+          echo "Main file: $main"
+
+      - name: Compile with pdflatex
+        uses: xu-cheng/latex-action@v3
+        with:
+          root_file: ${{ steps.find_tex.outputs.main }}
+          latexmk_use_xelatex: false
+          latexmk_shell_escape: true
+          args: -pdf -interaction=nonstopmode -halt-on-error -file-line-error
+
+      - name: Upload PDF artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: informe-pdf
+          path: plantillalatex/*.pdf
+          if-no-files-found: error
+          retention-days: 30

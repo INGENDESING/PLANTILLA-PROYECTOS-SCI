@@ -1,0 +1,41 @@
+\section{Metodología}
+
+La metodología sigue el flujo de trabajo propio de proyectos de protección contra incendios a nivel de ingeniería de detalle. Integra análisis de riesgos, cálculos hidráulicos, termodinámica del fuego y dimensionamiento por agente.
+
+\subsection{Análisis de riesgos — HAZOP + What-If}
+
+Se aplica HAZOP sobre los nodos del P\&ID con palabras guía (NO, MÁS, MENOS, INVERSO, TAMBIÉN, PARTE DE, OTRO) complementado con sesiones What-If para escenarios no capturados. Cada desviación se clasifica en la matriz severidad (1–5) × probabilidad (1–5). Las categorías de riesgo (\textit{Bajo}, \textit{Moderado}, \textit{Alto}, \textit{Inaceptable}) definen el nivel de mitigación requerido. Cuando el proyecto lo exige, el análisis se extiende con FMEA, LOPA o árbol de fallos.
+
+\subsection{Diseño hidráulico (NFPA 13 / 14 / 20 / 24)}
+
+La pérdida de carga por fricción se calcula con la ecuación de Hazen-Williams según NFPA 13 (ed.\ vigente):
+
+\begin{equation}
+p_f = \frac{4{,}52 \cdot Q^{1{,}85}}{C^{1{,}85} \cdot d^{4{,}87}} \quad \text{[psi/ft]}
+\label{eq:hw}
+\end{equation}
+
+con coeficientes $C$ de Tabla 23.4.4.7.1. El análisis nodal se resuelve por Newton-Raphson (\texttt{scipy.optimize.fsolve}) sobre el balance de caudales y presiones del área hidráulicamente más remota. La curva de la bomba NFPA 20 se verifica contra los límites de \textit{churn} (≤ 140\,\% de la presión de diseño) y 150\,\% de caudal (≥ 65\,\% de la presión de diseño).
+
+\subsection{Termodinámica del fuego (SFPE Handbook, NFPA 921)}
+
+La tasa de liberación de calor se estima como $\dot Q = \dot m_f \cdot \Delta H_c \cdot \chi$. La pluma se modela con Heskestad para obtener la temperatura en el eje y la altura virtual $z_0 = 0{,}083\,\dot Q^{2/5} - 1{,}02\,D$. La radiación a blancos próximos usa el factor de configuración correspondiente con $\chi_r$ según el combustible. El criterio de flashover de Thomas se aplica en recintos confinados.
+
+\subsection{Agentes limpios (NFPA 2001)}
+
+La masa de agente se determina con la Ec.\ 5.5.1.1 de NFPA 2001:
+
+\begin{equation}
+m = \frac{V}{s(T)} \cdot \frac{C}{100 - C}
+\label{eq:agente}
+\end{equation}
+
+con $s(T) = k_1 + k_2 T$. La concentración de diseño $C$ se verifica contra el NOAEL para ocupación normal.
+
+\subsection{Clasificación de áreas (NEC Art.\ 500–505)}
+
+Las áreas se clasifican por Clase (I gases, II polvos, III fibras), División (1 ó 2) o Zona (0/1/2 gases, 20/21/22 polvos), con grupo de material y código de temperatura $T_1$–$T_6$. Para bagazo se aplica NFPA 499 y NFPA 654/664 para manejo de polvo combustible.
+
+\subsection{Herramientas computacionales}
+
+Los cálculos se implementan en \texttt{src/pci/} (módulos \texttt{hidraulica}, \texttt{fuego}, \texttt{agentes\_limpios}, \texttt{deteccion}, \texttt{alarma\_nac}, \texttt{riesgos}, \texttt{clasificacion\_areas}). Cada función referencia norma, edición y sección, y se valida contra un caso resuelto del SFPE Handbook o Annex NFPA. La reproducibilidad se asegura mediante \textit{notebooks} en \texttt{notebooks/} y pruebas automáticas en \texttt{tests/}.

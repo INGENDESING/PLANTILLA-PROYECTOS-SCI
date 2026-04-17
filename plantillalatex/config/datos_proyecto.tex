@@ -1,0 +1,65 @@
+% ===================== DATOS DEL PROYECTO =====================
+% Toda la información del proyecto se centraliza aquí para facilitar
+% la creación de nuevos informes sin alterar el código fuente.
+
+% 1. Información General del Proyecto
+\newcommand{\projecttitle}{DISEÑO/DIAGNOSTICO}
+\newcommand{\documentcode}{P25XX-PR-XXX-00X}
+\newcommand{\documenttype}{MEMORIA / INFORME XXXXX}
+\newcommand{\targetcompany}{P26XX}
+
+% 2. Información de Documento y Emisión
+\newcommand{\docRevision}{0}
+\newcommand{\docFecha}{\today}
+\newcommand{\docFechaLarga}{MES DIA 202X}
+
+% 3. Integrantes y Control de Firmas
+\newcommand{\firmaElaboro}{J. Arboleda}
+\newcommand{\firmaReviso}{H. Rosero}
+\newcommand{\firmaAprobo}{F. Navia}
+
+% 4. Fechas de Firmas y Revisiones
+\newcommand{\fechaElaboro}{01/20/2026}
+\newcommand{\fechaReviso}{01/22/2026}
+\newcommand{\fechaAprobo}{01/25/2026}
+
+% 5. Datos de Historial de Revisiones (Portada / Firmas)
+% Se recomienda llenar según la configuración del proyecto
+\newcommand{\fechaRevCero}{01/11/2025}
+\newcommand{\descRevCero}{Emisión inicial}
+\newcommand{\fechaRevUno}{--}
+\newcommand{\descRevUno}{Revisión cliente}
+\newcommand{\fechaRevDos}{--}
+\newcommand{\descRevDos}{Emisión final}
+\newcommand{\fechaRevTres}{--}
+\newcommand{\descRevTres}{--}
+\newcommand{\fechaRevCuatro}{--}
+\newcommand{\descRevCuatro}{--}
+
+% ===================== DATOS PCI (Protección Contra Incendios) =====================
+% Completar para cada proyecto. Estas variables se usan en las secciones 07–09.
+
+% 6. Identificación PCI
+\newcommand{\occupancy}{Planta de cogeneración de energía a partir de bagazo}
+\newcommand{\hazardclass}{OH2}             % LH / OH1 / OH2 / EH1 / EH2 (NFPA 13)
+\newcommand{\ahj}{Autoridad Competente local (AHJ)}
+
+% 7. Normas aplicables (código + edición/año)
+\newcommand{\nfpacodes}{%
+  NFPA 13 (ed. vigente), NFPA 14, NFPA 20, NFPA 24, NFPA 72,%
+  NFPA 2001, NFPA 850, NFPA 654, NFPA 664, NFPA 499,%
+  NFPA 70 (NEC), NFPA 70E, SFPE Handbook, ISA 5.1.%
+}
+
+% 8. Bases hidráulicas
+\newcommand{\densidadDiseno}{0{,}20 gpm/ft\textsuperscript{2} (8{,}15 mm/min)}
+\newcommand{\areaOperacion}{1500 ft\textsuperscript{2}}
+\newcommand{\tiempoOperacion}{60 min}
+\newcommand{\margenSeguridadHidro}{10\,\%}
+
+% 9. Clasificación eléctrica NEC (resumen)
+\newcommand{\classifiedareas}{Clase II Div.\,2 Grupo G (patio bagazo y silos); otras áreas no clasificadas.}
+
+% 10. Agente limpio (si aplica)
+\newcommand{\agenteLimpio}{FK-5-1-12 (Novec 1230)}
+\newcommand{\concentracionDiseno}{5{,}0\,\%}

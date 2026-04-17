@@ -1,0 +1,40 @@
+% ===================== RESTAURAR ESTILO ANTES DEL FRONTMATTER =====================
+\pagestyle{corporativo}
+
+% ===================== FRONTMATTER CON MEMBRETE FORZADO =====================
+\begin{frontmatter}
+
+	\title{\projecttitle}
+
+	\author[inst1]{J.Arboleda\corref{cor1}}
+	\ead{proyectos2@dmlsas.com}
+
+	\author[inst1]{F. Navia}
+	\ead{fernando.navia@dmlsas.com}
+
+	\author[inst2]{H. Rosero}
+	\ead{herminsul.rosero@dmlsas.com}
+
+	\cortext[cor1]{Autor correspondiente}
+	\address[inst1]{DML Ingenieros consultores, Cali, Colombia, 760025}
+	\address[inst2]{Especialidad Mecanica y procesos, Cali, Colombia}
+
+	% ===================== ABSTRACT CON MEMBRETE GARANTIZADO =====================
+	\begin{abstract}
+		% FORZAR EXPLÍCITAMENTE EL ESTILO EN EL ABSTRACT
+		\thispagestyle{corporativo}
+		Este informe presenta el análisis técnico completo del proyecto de ingeniería especificado. Se incluyen los resultados del estudio, análisis de viabilidad técnica, recomendaciones de diseño y conclusiones principales. El trabajo se desarrolló siguiendo las normativas internacionales aplicables y las mejores prácticas de ingeniería, garantizando la calidad y confiabilidad de los resultados obtenidos para el cliente.
+
+		El proyecto demuestra viabilidad técnica y económica bajo las condiciones especificadas, cumpliendo con todos los criterios de diseño establecidos y las normativas aplicables del sector industrial.
+	\end{abstract}
+
+	\begin{keyword}
+		ingeniería \sep análisis técnico \sep diseño \sep optimización \sep normativas
+	\end{keyword}
+
+\end{frontmatter}
+
+% ===================== RESTAURAR ESTILO DESPUÉS DEL FRONTMATTER =====================
+\pagestyle{corporativo}
+% Forzar en la página actual también
+\thispagestyle{corporativo}

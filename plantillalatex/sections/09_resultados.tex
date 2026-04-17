@@ -1,0 +1,67 @@
+\section{Resultados}
+
+\subsection{Matriz de riesgo consolidada}
+
+\begin{table}[htbp]
+\centering
+\caption{Resumen de escenarios de fuego dominantes (HAZOP + What-If)}
+\label{tab:matriz_riesgo}
+\setcounter{itemcount}{0}
+\begin{tabularx}{\textwidth}{@{}NXcccl@{}}
+\toprule
+\multicolumn{1}{c}{\textbf{Item}} & \textbf{Escenario} & \textbf{Sev.} & \textbf{Prob.} & \textbf{Riesgo} & \textbf{Salvaguarda propuesta} \\
+\midrule
+& Incendio en patio de bagazo & 4 & 3 & 12 (Alto) & Monitores + rociadores perimetrales \\
+& Deflagración en silo de bagazo & 5 & 2 & 10 (Alto) & Venteo NFPA 68 + inertización \\
+& Fuego en aceite de turbina & 4 & 3 & 12 (Alto) & CO\textsubscript{2} + agua pulverizada \\
+& Cortocircuito en transformador & 4 & 2 & 8 (Moderado) & Diluvio NFPA 15 \\
+& Incendio en sala de control & 3 & 2 & 6 (Moderado) & Agente limpio NFPA 2001 \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Cálculos hidráulicos — red de rociadores}
+
+\begin{table}[htbp]
+\centering
+\caption{Resultados del nodal hidráulico del área más remota}
+\label{tab:hidraulica_resultados}
+\setcounter{itemcount}{0}
+\begin{tabularx}{\textwidth}{@{}NXlcl@{}}
+\toprule
+\multicolumn{1}{c}{\textbf{Item}} & \textbf{Variable} & \textbf{Valor} & \textbf{Unidad} & \textbf{Referencia} \\
+\midrule
+& Caudal total demanda & 500 & gpm & NFPA 13 \\
+& Presión en la conexión & 85 & psi & \\
+& $\Delta P$ red + elevación & 42 & psi & Ec.\ \ref{eq:hw} \\
+& Rociadores operando & 15 & -- & Área más remota \\
+& Margen de seguridad & 12 & \% & \\
+\bottomrule
+\end{tabularx}
+\end{table}
+
+\subsection{Dimensionamiento de bomba (NFPA 20)}
+
+Se selecciona una bomba centrífuga horizontal de partición axial con capacidad nominal de 500 gpm a 100 psi. Se verifica que el punto de \textit{churn} no exceda 140\,\% de la presión de diseño y que al 150\,\% del caudal la presión sea $\ge$ 65\,\% del diseño.
+
+\subsection{Detección y alarma (NFPA 72)}
+
+\begin{itemize}
+\item Capacidad de batería calculada: $C_{\text{Ah}} = (I_{sb}\,t_{sb} + I_{al}\,t_{al}) \cdot 1{,}20$.
+\item Caída de tensión máxima en NAC: $<$ 10\,\% al dispositivo más alejado.
+\item Nivel sonoro en peor punto: $\ge$ 15 dB sobre ruido ambiente.
+\end{itemize}
+
+\subsection{Agente limpio (NFPA 2001)}
+
+Masa de agente \agenteLimpio{} para el recinto protegido con concentración de diseño \concentracionDiseno{}:
+
+\begin{equation*}
+m = \frac{V}{k_1 + k_2 T} \cdot \frac{C}{100 - C}
+\end{equation*}
+
+Verificación: $C_{\text{diseño}} \le \text{NOAEL}$ para ocupación normal.
+
+\subsection{Clasificación de áreas NEC}
+
+El resumen por área se encuentra en el Anexo correspondiente; ver también \texttt{data/clasificacion\_areas.csv}.

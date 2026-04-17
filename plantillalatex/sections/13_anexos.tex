@@ -1,0 +1,57 @@
+% ===================== ANEXOS =====================
+\appendix
+
+\section{Registro HAZOP + What-If}
+\label{appendix:hazop}
+
+Registro completo de sesiones HAZOP/What-If con nodos, palabras guía, desviaciones, causas, consecuencias, salvaguardas existentes, calificación de riesgo y recomendaciones. Fuente: archivo \texttt{data/hazop.csv}.
+
+\section{Memoria de cálculo hidráulico}
+\label{appendix:hidraulica}
+
+Memoria completa del análisis nodal NFPA 13 del área hidráulicamente más remota, incluyendo tubería por tubería, rociador por rociador y la curva de suministro vs.\ demanda. Los resultados se generan con \texttt{src/pci/hidraulica.py} y se reproducen en \texttt{notebooks/01\_hidraulica.ipynb}.
+
+\section{Memoria de cálculo — agentes de extinción}
+\label{appendix:agentes}
+
+Cálculos de masa de agente limpio (NFPA 2001), tasa de aplicación de espuma (NFPA 11/16) y/o masa de CO\textsubscript{2} (NFPA 12) según el sistema seleccionado. Módulos: \texttt{src/pci/agentes\_limpios.py}, \texttt{src/pci/espumas.py}.
+
+\section{Detección y alarma — planillas NFPA 72}
+\label{appendix:deteccion}
+
+Planillas de dispositivos, cálculos de batería, caída de tensión en NAC/SLC y niveles de audibilidad. Módulos: \texttt{src/pci/deteccion.py}, \texttt{src/pci/alarma\_nac.py}.
+
+\section{Clasificación de áreas NEC}
+\label{appendix:clasificacion}
+
+Listado de áreas clasificadas con Clase/División (o Zona), grupo de material, código de temperatura y fuente de ignición. Fuente: \texttt{data/clasificacion\_areas.csv}.
+
+\section{Planos e isométricos}
+\label{appendix:planos}
+
+\begin{itemize}
+\item P\&ID general del sistema PCI (símbolos ISA 5.1 + NFPA 170).
+\item Isométricos hidráulicos por rama.
+\item Planta de distribución de detectores y notificadores.
+\item Diagramas unifilares eléctricos y planos de áreas clasificadas NEC.
+\end{itemize}
+
+\section{Listado de equipos}
+\label{appendix:equipos}
+
+\begin{table}[htbp]
+\centering
+\caption{Listado maestro de equipos PCI}
+\label{tab:equipos}
+\setcounter{itemcount}{0}
+\begin{tabularx}{\textwidth}{@{}NlXcl@{}}
+\toprule
+\multicolumn{1}{c}{\textbf{Item}} & \textbf{Tag} & \textbf{Descripción} & \textbf{Cant.} & \textbf{Norma} \\
+\midrule
+& FP-001 & Bomba contra incendio principal & 1 & NFPA 20 \\
+& FP-002 & Bomba jockey & 1 & NFPA 20 \\
+& TK-001 & Tanque de reserva & 1 & NFPA 22 \\
+& FACP-01 & Panel de alarma central & 1 & NFPA 72 \\
+\bottomrule
+\end{tabularx}
+\end{table}

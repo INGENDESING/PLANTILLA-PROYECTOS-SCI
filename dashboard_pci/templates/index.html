@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>Dashboard PCI — Detección y Extinción de Incendios</title>
+<link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+<header>
+  <h1>Dashboard PCI</h1>
+  <p>Calculadoras NFPA — hidráulica, agentes limpios y termodinámica del fuego.</p>
+</header>
+
+<main>
+  <section class="card">
+    <h2>Hazen-Williams (NFPA 13)</h2>
+    <label>Q [gpm] <input id="hw_Q" type="number" value="250"></label>
+    <label>C <input id="hw_C" type="number" value="120"></label>
+    <label>d interno [in] <input id="hw_d" type="number" value="2.067"></label>
+    <label>L equiv. [ft] <input id="hw_L" type="number" value="100"></label>
+    <button onclick="calcHW()">Calcular</button>
+    <pre id="hw_out"></pre>
+  </section>
+
+  <section class="card">
+    <h2>Masa de agente limpio (NFPA 2001)</h2>
+    <label>Agente
+      <select id="ag_tipo">
+        <option>FM200</option><option>Novec1230</option><option>IG541</option>
+      </select>
+    </label>
+    <label>V protegido [m³] <input id="ag_V" type="number" value="100"></label>
+    <label>C diseño [%] <input id="ag_C" type="number" value="7"></label>
+    <label>T mín. [°C] <input id="ag_T" type="number" value="20"></label>
+    <button onclick="calcAgente()">Calcular</button>
+    <pre id="ag_out"></pre>
+  </section>
+
+  <section class="card">
+    <h2>Pluma de Heskestad (SFPE)</h2>
+    <label>HRR [kW] <input id="pl_Q" type="number" value="1000"></label>
+    <label>Diámetro fuego [m] <input id="pl_D" type="number" value="1"></label>
+    <label>Altura z [m] <input id="pl_z" type="number" value="3"></label>
+    <button onclick="calcPluma()">Calcular</button>
+    <pre id="pl_out"></pre>
+  </section>
+</main>
+
+<script src="/static/app.js"></script>
+</body>
+</html>
