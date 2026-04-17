@@ -1,0 +1,7 @@
+id,area,descripcion,clase_NEC,division,zona_equivalente,grupo,temperatura_codigo,metodo_clasificacion,referencia_NEC
+A001,Patio bagazo,Almacenamiento aire libre bagazo,II,2,22,G,T3,Analisis de polvo,NFPA 499 / NEC Art. 500.5(C)
+A002,Silo bagazo,Almacenamiento cerrado bagazo,II,1,21,G,T3,Analisis de polvo,NFPA 499 / NEC Art. 500.5(C)
+A003,Casa bombas,Diesel / electrico,II,2,22,G,T3,Fuente ignicion limitada,NEC Art. 500.5(C)
+A004,Tanque diesel,Almacenamiento diesel,II,2,22,D,T3,Metodo tradicional,NEC Art. 500.5(B)
+A005,Sala turbina,Hidrogeno + aceite lubricacion,II,1,21,B,T2,Metodo tradicional,NEC Art. 500.5(A)(B)
+A006,Sala control,Equipos electronicos,No clasificada,,,NA,NA,No aplica,NEC Art. 500

@@ -56,6 +56,9 @@ desktop.ini
 # data/*.csv de proyectos reales no deben subirse si contienen info confidencial
 # (ajustar por proyecto; los CSV plantilla sí se versionan)
 
+# === Legacy / duplicados ===
+ejemplo_web/
+
 # === Secrets ===
 .env
 .env.local

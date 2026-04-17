@@ -1,0 +1,6 @@
+id,nodo,escenario,severidad,probabilidad,riesgo,categoria,recomendacion,trazabilidad
+R001,General,Fuego en patio de bagazo,4,3,12,ALTO,Instalar monitores + rociadores perimetrales,NFPA 850 / HAZOP-001
+R002,General,Deflagracion en silo,5,2,10,ALTO,Supresion de explosion + venteo + inertizacion,NFPA 68/69 / HAZOP-002
+R003,General,Derrame hidrocarburo caldera,3,3,9,MODERADO,Sistema espuma AFFF + containment,NFPA 11 / WhatIf-001
+R004,General,Arco electrico en SE,4,2,8,MODERADO,Agente limpio + ESD + PPE NFPA 70E,NFPA 70E / HAZOP-003
+R005,General,Fuga de hidrogeno turbina,5,1,5,BAJO,Deteccion H2 + purga inerte + alarmas,NFPA 850 / WhatIf-002
