@@ -4,7 +4,7 @@
 > Leer como primera acción al iniciar una sesión; actualizar al cerrar.
 
 **Última actualización:** 2026-04-17
-**Fase:** plantilla base publicada en GitHub (v0.1.0)
+**Fase:** plantilla base publicada en GitHub (v0.1.0) — **lista para clonar en nuevo proyecto**
 **Avance estimado:** 100 % (plantilla lista para uso)
 
 ---
@@ -38,6 +38,7 @@
 | `notebooks/` | **Nuevo** — placeholder para Jupyter notebooks |
 | `requirements.txt` | **Nuevo** — dependencias Python del stack científico |
 | `.gitignore` | Exclusión de `ejemplo_web/` legacy |
+| `USAGE.md` | **Nuevo** — guía paso a paso para usar la plantilla en un proyecto nuevo |
 
 ---
 
@@ -86,8 +87,9 @@
 ## 7. Próximos pasos
 
 1. ~~Publicar en GitHub~~ ✅ Hecho: [https://github.com/INGENDESING/PLANTILLA-PROYECTOS-SCI](https://github.com/INGENDESING/PLANTILLA-PROYECTOS-SCI)
-2. Cargar proyecto específico: actualizar `config/datos_proyecto.tex`.
-3. Ejecutar HAZOP + What-If sobre P&ID.
-4. Dimensionar sistemas seleccionados en `src/pci/`.
-5. Compilar PDF y verificar con `pdflatex` (dos pasadas).
-6. Actualizar este `status.md` antes de cerrar la sesión.
+2. **Clonar plantilla en nuevo directorio** para proyecto específico (ver `USAGE.md`).
+3. Actualizar `config/datos_proyecto.tex` con datos reales del proyecto.
+4. Ejecutar HAZOP + What-If sobre P&ID.
+5. Dimensionar sistemas seleccionados en `src/pci/`.
+6. Compilar PDF y verificar con `pdflatex` (dos pasadas).
+7. Actualizar este `status.md` antes de cerrar la sesión.
