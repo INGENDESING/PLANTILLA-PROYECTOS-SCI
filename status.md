@@ -4,8 +4,8 @@
 > Leer como primera acción al iniciar una sesión; actualizar al cerrar.
 
 **Última actualización:** 2026-04-17
-**Fase:** plantilla base publicable (sin proyecto específico cargado)
-**Avance estimado:** —
+**Fase:** plantilla base publicada en GitHub (v0.1.0)
+**Avance estimado:** 100 % (plantilla lista para uso)
 
 ---
 
@@ -33,6 +33,11 @@
 | `plantillalatex/config/datos_proyecto.tex` | Variables PCI (ocupación, riesgo, AHJ, normas) |
 | `plantillalatex/references/bibliografia.bib` | Entradas NFPA / SFPE / NEC |
 | `plantillalatex/sections/07–09, 13` | Adaptación a contenido PCI |
+| `tests/` | **Nuevo** — 27 casos pytest validados contra SFPE/NFPA |
+| `data/` | **Nuevo** — plantillas CSV: matriz riesgo, combustibles, clasificación áreas |
+| `notebooks/` | **Nuevo** — placeholder para Jupyter notebooks |
+| `requirements.txt` | **Nuevo** — dependencias Python del stack científico |
+| `.gitignore` | Exclusión de `ejemplo_web/` legacy |
 
 ---
 
@@ -80,8 +85,9 @@
 
 ## 7. Próximos pasos
 
-1. Cargar proyecto específico: actualizar `config/datos_proyecto.tex`.
-2. Ejecutar HAZOP + What-If sobre P&ID.
-3. Dimensionar sistemas seleccionados en `src/pci/`.
-4. Compilar PDF y verificar con `pdflatex` (dos pasadas).
-5. Actualizar este `status.md` antes de cerrar la sesión.
+1. ~~Publicar en GitHub~~ ✅ Hecho: [https://github.com/INGENDESING/PLANTILLA-PROYECTOS-SCI](https://github.com/INGENDESING/PLANTILLA-PROYECTOS-SCI)
+2. Cargar proyecto específico: actualizar `config/datos_proyecto.tex`.
+3. Ejecutar HAZOP + What-If sobre P&ID.
+4. Dimensionar sistemas seleccionados en `src/pci/`.
+5. Compilar PDF y verificar con `pdflatex` (dos pasadas).
+6. Actualizar este `status.md` antes de cerrar la sesión.
